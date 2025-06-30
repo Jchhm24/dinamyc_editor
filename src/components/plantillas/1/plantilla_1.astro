@@ -1,0 +1,40 @@
+---
+import '@styles/global.css';
+
+interface Props {
+  img: {
+    src: string;
+    alt: string;
+    show: boolean;
+  };
+  title: {
+    text: string;
+    show: boolean;
+  };
+  content: {
+    text: string;
+    show: boolean;
+  };
+}
+
+const { img, title, content }: Props = Astro.props;
+
+---
+
+<section class="flex flex-row items-start justify-center p-4 gap-4 w-full border-2 border-gray-300 rounded-lg">
+    {img.show && (
+        <div class="w-1/2">
+            <img src={img.src} alt={img.alt} class="w-full h-auto" />
+        </div>
+    )}
+
+    <div class="flex flex-col items-start justify-center w-1/2">
+        {title.show && (
+            <h1 class="text-2xl font-bold mt-4">{title.text}</h1>
+        )}
+
+        {content.show && (
+            <p class="mt-2 text-gray-700">{content.text}</p>
+        )}
+    </div>
+</section>

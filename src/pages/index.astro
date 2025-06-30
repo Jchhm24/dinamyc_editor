@@ -1,0 +1,28 @@
+---
+import PlantillaEdit from '@components/plantillas/1/plantilla_1_edit.svelte'
+import Layout from '../layouts/Layout.astro';
+
+const img = {
+  src: '/OIP.webp',
+  alt: 'Description of the image bro',
+  show: true
+};
+const title = {
+  text: 'Title of the section',
+  show: true
+};
+const content = {
+  text: 'Content of the section jsjsjs',
+  show: true
+};
+---
+
+<Layout>
+  <PlantillaEdit
+		img={img}
+		title={title}
+		content={content}
+    client:load
+	/>
+
+</Layout>
