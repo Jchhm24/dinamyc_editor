@@ -11,8 +11,6 @@
   const toggleEdit = () => {
     taps++;
 
-    console.log('Taps:', taps);
-
     if (taps >= 3) {
       edit = true;
       taps = 0;
